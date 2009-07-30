@@ -1,0 +1,30 @@
+<?xml version="1.0" ?>
+<Project name="Example" lang="Java">
+  <!--XML template version 0.3-->
+  <Struct name="Class Diagram">
+    <Class type="interface" fullname="SuperInterface">
+      <Class type="interface" fullname="InterfaceA" edgetype="extends">
+        <Class type="class" modifiers="abstract" fullname="ClassA" edgetype="implements"> 
+          <Class type="class" modifiers="final" fullname="ClassC" edgetype="extends">
+            <Class type="interface" modifiers="protected" fullname="ClassC.InnerInterface" edgetype="inner">
+              <Class type="class" modifiers="public,static" fullname="ClassC.InnerInterface.InnerClass" edgetype="inner"/>
+            </Class>
+          </Class>
+        </Class>
+        <Class type="class" fullname="ClassB" edgetype="implements" _nodeId="ClassB"/>             
+      </Class>
+      <Class type="interface" fullname="InterfaceB" edgetype="extends" _nodeId="InterfaceB">
+        <Class type="interface" modifiers="public,static" fullname="InterfaceB.InnerInterface" edgetype="inner"/>
+        <Edge uid="ClassB" edgetype="implements" _nodeId="ClassB"/> 
+      </Class>
+      <Class type="class" fullname="SubClass" edgetype="implements" _nodeId="SubClass"/>   
+    </Class>
+    <Class type="interface" fullname="NewInterface">
+      <Class type="class" modifiers="public,static" fullname="NewInterface.InnerClass" edgetype="inner"/>
+      <Edge uid="InterfaceB" edgetype="extends" _nodeId="InterfaceB"/>
+    </Class>
+    <Class type="class" modifiers="abstract" fullname="SuperClass">
+      <Edge uid="SubClass" edgetype="extends" _nodeId="SubClass"/>
+    </Class>
+  </Struct>
+</Project>
